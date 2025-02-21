@@ -1,0 +1,15 @@
+{
+  "name": "pink-marker",
+  "version": "1.0.0",
+  "description": "Eine TypeScript-Library, die Annotationen im DOM mittels TreeWalker erfasst und serialisiert.",
+  "main": "dist/pink-marker.js",
+  "scripts": {
+    "build": "tsc && terser dist/pink-marker.js -o dist/pink-marker.min.js --compress --mangle"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "terser": "^5.39.0",
+    "typescript": "^4.9.4"
+  }
+}

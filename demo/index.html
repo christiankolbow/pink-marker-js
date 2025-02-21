@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./pink-marker.min.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="container mx-auto my-12">
+      <h1 class="font-bold text-4xl mb-12">Hello World</h1>
+      <div class="space-y-2 mb-12">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore vitae libero doloribus blanditiis est facere labore repellat.
+          Unde praesentium inventore reprehenderit voluptatum dignissimos doloribus rem minus, ex aliquid corporis quo!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, praesentium reprehenderit doloribus ipsa itaque aliquam sequi autem
+          tempore. Pariatur culpa sunt impedit quaerat rem nisi ab, ducimus repellat enim, veniam ullam reiciendis necessitatibus aperiam
+          eaque placeat iure architecto hic. Voluptatem quos excepturi optio sed nam culpa distinctio totam assumenda nesciunt obcaecati
+          commodi expedita repudiandae sint, maiores at illo accusamus porro mollitia tempore sit accusantium pariatur eius doloribus?
+          Cupiditate nulla, necessitatibus dicta nobis quisquam ipsum maiores.
+        </p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione sed voluptas officiis iste sit minus modi? Id adipisci, a quae
+          dolor numquam ea tempore sapiente possimus accusantium commodi odit ad optio aperiam debitis quam fugiat nisi earum suscipit amet
+          quaerat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellendus vero vel voluptatibus sed pariatur illo dignissimos
+          praesentium, exercitationem enim dolor recusandae possimus velit at explicabo asperiores natus distinctio harum consequatur
+          ducimus autem atque! Possimus nulla quod unde optio, aliquam ab placeat! Provident earum eius vero doloribus laboriosam tempora ad
+          velit recusandae ipsam illo odio autem, dolorum dolorem laborum obcaecati, officiis quaerat ut praesentium fuga.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore vitae libero doloribus blanditiis est facere labore repellat.
+          Unde praesentium inventore reprehenderit voluptatum dignissimos doloribus rem minus, ex aliquid corporis quo!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, praesentium reprehenderit doloribus ipsa itaque aliquam sequi autem
+          tempore. Pariatur culpa sunt impedit quaerat rem nisi ab, ducimus repellat enim, veniam ullam reiciendis necessitatibus aperiam
+          eaque placeat iure architecto hic. Voluptatem quos excepturi optio sed nam culpa distinctio totam assumenda nesciunt obcaecati
+          commodi expedita repudiandae sint, maiores at illo accusamus porro mollitia tempore sit accusantium pariatur eius doloribus?
+          Cupiditate nulla, necessitatibus dicta nobis quisquam ipsum maiores.
+        </p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione sed voluptas officiis iste sit minus modi? Id adipisci, a quae
+          dolor numquam ea tempore sapiente possimus accusantium commodi odit ad optio aperiam debitis quam fugiat nisi earum suscipit amet
+          quaerat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellendus vero vel voluptatibus sed pariatur illo dignissimos
+          praesentium, exercitationem enim dolor recusandae possimus velit at explicabo asperiores natus distinctio harum consequatur
+          ducimus autem atque! Possimus nulla quod unde optio, aliquam ab placeat! Provident earum eius vero doloribus laboriosam tempora ad
+          velit recusandae ipsam illo odio autem, dolorum dolorem laborum obcaecati, officiis quaerat ut praesentium fuga.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-bold text-xl mb-6">Nested Test</h2>
+        <div class="space-y-2">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae impedit error harum nisi quaerat distinctio, ipsa nobis
+            deserunt doloribus quas eligendi ea optio voluptatibus, dicta earum itaque vel! Repudiandae, ipsam?
+          </p>
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, exercitationem!</p>
+          </div>
+          <div>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, nam?</div>
+          </div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam explicabo praesentium itaque atque unde magnam quasi deserunt
+          quo inventore id temporibus, eum minus? Reprehenderit expedita, asperiores doloribus debitis consequatur fuga.
+        </div>
+      </div>
+    </div>
+    <script>
+      const pinkMarker = new PinkMarker({
+        modalClass: '!bg-yellow-300 p-4 rounded-md',
+        modalTextareaClass: 'bg-white p-2 rounded-md',
+        modalButtonContainerClass: 'flex justify-end gap-2',
+        saveButtonText: 'Speichern',
+        saveButtonClass: 'bg-green-500 text-white p-2 rounded-md',
+        cancelButtonText: 'Abbrechen',
+        cancelButtonClass: 'bg-gray-500 text-white p-2 rounded-md',
+        deleteButtonText: 'Löschen',
+        deleteButtonClass: 'bg-red-500 text-white p-2 rounded-md',
+        overlayColor: 'rgba(255,30,0,0.3)',
+        iconClass: 'modal-icon',
+        iconContainerClass: 'p-2 bg-white rounded-full -translate-y-4 shadow-md border border-gray-100',
+        iconContainerTitle: 'Notiz öffnen',
+        defaultIcon: './icon.svg',
+      });
+
+      pinkMarker.init();
+    </script>
+  </body>
+</html>
