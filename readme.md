@@ -12,13 +12,7 @@ Pink Marker JS is a TypeScript library that allows annotations in the DOM to be 
 
 ## Installation
 
-Pink Marker can be integrated into a project via npm:
-
-```sh
-npm install pink-marker
-```
-
-Alternatively, it can be included directly via a `<script>` tag:
+Pink Marker can be included directly via a `<script>` tag:
 
 ```html
 <script src="./dist/pink-marker.min.js"></script>
