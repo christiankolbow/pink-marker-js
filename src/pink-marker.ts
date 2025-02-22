@@ -288,6 +288,7 @@ class PinkMarker {
 
     const outsideClickListener = (event: MouseEvent) => {
       if (modal && !modal.contains(event.target as Node)) {
+        this.updateAnnotations();
         modal.remove();
         document.removeEventListener('click', outsideClickListener);
       }
