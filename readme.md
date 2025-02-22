@@ -15,7 +15,7 @@ Pink Marker JS is a TypeScript library that allows annotations in the DOM to be 
 Pink Marker can be included directly via a `<script>` tag:
 
 ```html
-<script src="./dist/pink-marker.min.js"></script>
+<script src="./pink-marker.min.js"></script>
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ Pink Marker can be included directly via a `<script>` tag:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pink Marker Example</title>
-    <script src="./dist/pink-marker.min.js"></script>
+    <script src="./pink-marker.min.js"></script>
   </head>
   <body>
     <div class="container">
