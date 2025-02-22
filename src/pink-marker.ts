@@ -98,7 +98,6 @@ class PinkMarker {
     throw new Error('Invalid character for Base52: ' + ch);
   }
 
-  // Hilfsmethoden, um Textknoten innerhalb eines Containers zu ermitteln
   private getFirstTextNode(node: Node): Text | null {
     if (node.nodeType === Node.TEXT_NODE) return node as Text;
     for (let i = 0; i < node.childNodes.length; i++) {
@@ -117,29 +116,24 @@ class PinkMarker {
     return null;
   }
 
-  // Sucht im Geschwisterbereich vor dem gegebenen Node den letzten Textknoten
   private getLastTextNodeBefore(node: Node): Text | null {
     let sibling = node.previousSibling;
     while (sibling) {
       if (sibling.nodeType === Node.TEXT_NODE) {
         return sibling as Text;
-      } else {
-        const text = this.getLastTextNodeFrom(sibling);
-        if (text) return text;
       }
+      const text = this.getLastTextNodeFrom(sibling);
+      if (text) return text;
       sibling = sibling.previousSibling;
     }
     return null;
   }
 
-  // Angepasste encodeSelection: Falls range.endContainer kein Textknoten ist,
-  // wird der letzte Textknoten aus dem Container **vor** range.endContainer als Ende verwendet.
   private encodeSelection(): string | null {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return null;
     const range = selection.getRangeAt(0);
 
-    // Falls startContainer kein Textknoten ist, nutze den ersten Textknoten darin
     if (range.startContainer.nodeType !== Node.TEXT_NODE) {
       const firstText = this.getFirstTextNode(range.startContainer);
       if (firstText) {
@@ -149,7 +143,6 @@ class PinkMarker {
       }
     }
 
-    // Falls endContainer kein Textknoten ist, nutze den letzten Textknoten aus dem Vorgänger
     if (range.endContainer.nodeType !== Node.TEXT_NODE) {
       const lastText = this.getLastTextNodeBefore(range.endContainer);
       if (lastText) {
@@ -284,17 +277,13 @@ class PinkMarker {
       deleteBtn.style.marginLeft = '10px';
       deleteBtn.addEventListener('click', () => {
         const index = this.annotations.findIndex((a) => a.encoding === encoding);
-        if (index !== -1) {
-          this.annotations.splice(index, 1);
-        }
+        if (index !== -1) this.annotations.splice(index, 1);
         modal!.style.display = 'none';
         document.removeEventListener('click', outsideClickListener);
         this.updateAnnotations();
       });
 
-      btnContainer.appendChild(saveBtn);
-      btnContainer.appendChild(cancelBtn);
-      btnContainer.appendChild(deleteBtn);
+      btnContainer.append(saveBtn, cancelBtn, deleteBtn);
       modal.appendChild(btnContainer);
       document.body.appendChild(modal);
     }
