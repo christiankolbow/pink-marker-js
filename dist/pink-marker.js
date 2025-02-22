@@ -233,6 +233,7 @@ class PinkMarker {
             cancelBtn.addEventListener('click', () => {
                 modal.remove();
                 document.removeEventListener('click', outsideClickListener);
+                this.updateAnnotations();
             });
             const deleteBtn = document.createElement('button');
             deleteBtn.className = this.options.deleteButtonClass || '';
@@ -249,9 +250,9 @@ class PinkMarker {
             modal.appendChild(btnContainer);
             document.body.appendChild(modal);
         }
-        document.getElementById('annotation-text').value = initialNote;
         modal.style.display = 'block';
         setTimeout(() => {
+            document.getElementById('annotation-text').value = initialNote || '';
             document.getElementById('annotation-text').focus();
         }, 0);
         const outsideClickListener = (event) => {
