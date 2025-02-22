@@ -76,18 +76,18 @@
     </div>
     <script>
       const pinkMarker = new PinkMarker({
-        modalClass: '!bg-yellow-300 p-4 rounded-md',
-        modalTextareaClass: 'bg-white p-2 rounded-md',
-        modalButtonContainerClass: 'flex justify-end gap-2',
+        modalClass: 'bg-gray-800 p-6 rounded-md shadow-md text-white',
+        modalTextareaClass: 'bg-gray-700 p-2 mb-4 rounded-md w-screen max-w-lg h-48 max-h-screen text-white focus:outline-none resize-none',
+        modalButtonContainerClass: 'grid grid-cols-3 gap-2',
         saveButtonText: 'Speichern',
-        saveButtonClass: 'bg-green-500 text-white p-2 rounded-md',
+        saveButtonClass: 'bg-green-600 p-2 rounded-md order-3 text-white',
         cancelButtonText: 'Abbrechen',
-        cancelButtonClass: 'bg-gray-500 text-white p-2 rounded-md',
+        cancelButtonClass: 'bg-gray-500 p-2 rounded-md order-2 text-white',
         deleteButtonText: 'Löschen',
-        deleteButtonClass: 'bg-red-500 text-white p-2 rounded-md',
+        deleteButtonClass: 'bg-red-500 p-2 rounded-md order-1 text-white',
         overlayColor: 'rgba(255,30,0,0.3)',
         iconClass: 'modal-icon',
-        iconContainerClass: 'p-2 bg-white rounded-full -translate-y-4 shadow-md border border-gray-100',
+        iconContainerClass: 'bg-white border border-gray-100 p-2 rounded-full shadow-md -translate-y-4',
         iconContainerTitle: 'Notiz öffnen',
         defaultIcon: './icon.svg',
       });

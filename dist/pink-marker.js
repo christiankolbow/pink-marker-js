@@ -212,44 +212,36 @@ class PinkMarker {
             modal.style.top = '50%';
             modal.style.left = '50%';
             modal.style.transform = 'translate(-50%, -50%)';
-            modal.style.backgroundColor = 'white';
-            modal.style.padding = '20px';
-            modal.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-            modal.style.zIndex = '1000';
+            modal.style.zIndex = '2000';
             const textarea = document.createElement('textarea');
             textarea.id = 'annotation-text';
             textarea.className = this.options.modalTextareaClass || '';
-            textarea.style.width = '300px';
-            textarea.style.height = '100px';
             modal.appendChild(textarea);
             const btnContainer = document.createElement('div');
             btnContainer.className = this.options.modalButtonContainerClass || '';
-            btnContainer.style.marginTop = '10px';
             const saveBtn = document.createElement('button');
             saveBtn.className = this.options.saveButtonClass || '';
             saveBtn.textContent = this.options.saveButtonText;
             saveBtn.addEventListener('click', () => {
                 onSave(document.getElementById('annotation-text').value);
-                modal.style.display = 'none';
+                modal.remove();
                 document.removeEventListener('click', outsideClickListener);
             });
             const cancelBtn = document.createElement('button');
             cancelBtn.className = this.options.cancelButtonClass || '';
             cancelBtn.textContent = this.options.cancelButtonText;
-            cancelBtn.style.marginLeft = '10px';
             cancelBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
+                modal.remove();
                 document.removeEventListener('click', outsideClickListener);
             });
             const deleteBtn = document.createElement('button');
             deleteBtn.className = this.options.deleteButtonClass || '';
             deleteBtn.textContent = this.options.deleteButtonText;
-            deleteBtn.style.marginLeft = '10px';
             deleteBtn.addEventListener('click', () => {
                 const index = this.annotations.findIndex((a) => a.encoding === encoding);
                 if (index !== -1)
                     this.annotations.splice(index, 1);
-                modal.style.display = 'none';
+                modal.remove();
                 document.removeEventListener('click', outsideClickListener);
                 this.updateAnnotations();
             });
@@ -259,9 +251,12 @@ class PinkMarker {
         }
         document.getElementById('annotation-text').value = initialNote;
         modal.style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('annotation-text').focus();
+        }, 0);
         const outsideClickListener = (event) => {
             if (modal && !modal.contains(event.target)) {
-                modal.style.display = 'none';
+                modal.remove();
                 document.removeEventListener('click', outsideClickListener);
             }
         };
